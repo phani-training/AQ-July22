@@ -37,4 +37,10 @@ divs and p tags will end the line and move to the next line with a small gap.
 To move acontent to a next line, U can use <br/> tag. 
 To draw a single line for better readability U can use <hr/>(Horizontal Rule) 
 
+Using rel attribute in a tags:
+If U want UR pages to be displayed on a new tab/window, we use target attribute and sent it to _blank. This can lead to phishing of UR website and is venerable to Cyber Attacks. So some browsers will make UR website secured by using rel attribute to set the values as noopener and noreferrer, this makes the page not to be opened by an external hacker by just copying the URL and pasting it
 
+Day 1 Assignment:
+Create a Website for a Travel agency that provides info about the traveltours of the agency. It could be North India tour, South tour, Karnataka Tour, Uttarakhand tour. The details of each tour should be made available in individual pages. Let there be a home page that contains all links to other pages. U should similarly provide link in each page to come to the Home page. 
+The Travel Website should allow users to contact U using a Page called Contact Us!. The Contact Us page will be a form that takes inputs from the user.
+ 

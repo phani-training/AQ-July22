@@ -13,7 +13,7 @@
     location of the Image. It is recommended to use the relative path for the images so that it is easy for maintaining
     the web site.
     <section>
-        <img src="./Images/Apples.jfif" alt="Apples">
+        <img width="30%" height="200px" src="./Images/Apples.jfif" alt="Apples">
         <p>Apples are good for health</p>
     </section>
     <section>
@@ -24,6 +24,13 @@
         <img src="./Images/SampleImg.gif" alt="MEN AT WORK">
         <p>Working from HOME!!!</p>
     </section>
-</body>
 
+    <h2>Using Picture Tag</h2>
+    <p>For multiple devices, we use picture tag that takes the attribute called media to difine the kind of the device on which the image is to be displayed. If U want UR Images to be modified for different kinds of media conditions like simplier version of the image for lower bandwidths. It is also used to offer alternate image formats that are not supported on the device. It is also used to save the bandwidths for high resolution images, thereby speeding up the loading time of the image</p>
+    <picture>
+        <source media="(max-width:600px)" srcset="./Images/Apples.jfif"/>
+        <source media="(min-width:800px)" srcset="./Images/Mangoes.jfif"/>
+        <img src="./Images/Apples.jfif" alt = "Apples"/>
+    </picture>
+</body>
 </html>

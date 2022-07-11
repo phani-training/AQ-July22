@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables Demo</title>
+</head>
+<body>
+    <h1>Tables in HTML</h1>
+    <p>
+        Tables are ways to represent data in a tabular format where the data will have rows and columns. U create a table using table tag and have in it table rows(tr) that contains one or more tabledata(td).U can create headings to the columns of the table using th instead of td. However, its good practise to create sections within the table as thead, tbody and tfoot.
+    </p>
+    <table border="1" style="text-align: center;">
+        <thead>
+            <tr>
+                <th>Emp ID</th>
+                <th>Employee Name</th>
+                <th>Employee Address</th>
+                <th>Employee Salary</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Phaniraj</td>
+            <td>Bangalore</td>
+            <td>65000</td>
+            <td>
+                <a href="#">Edit</a>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Robert</td>
+            <td>New York</td>
+            <td>45000</td>
+            <td><a href="#">Edit</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Andrew Stokes</td>
+            <td>London</td>
+            <td>50000</td>
+            <td><a href="#">Edit</a></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Himmler</td>
+            <td>Munich</td>
+            <td>30000</td>
+            <td><a href="#">Edit</a></td>
+        </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">End of the Records</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

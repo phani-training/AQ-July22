@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms in HTML</title>
+    <script>
+        function init(){
+            let rg =document.getElementById("txtRange");
+            rg.addEventListener("mouseleave", function(){
+                document.getElementById("spRange").innerText = `${rg.value} of 10`;
+            })
+        }
+        window.addEventListener("load", function(){
+            init();
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <h1>What are Forms?</h1>
+        <div>
+            <h2>Forms Understanding</h2>
+            <p>Forms are a way of taking inputs from the user and do some processing at the server side. form will have attributes like action and method. action tells about the server side page that will process the inputs given in the form. method tells about the way the inputs are transfered to the action page. There are 4 major ways of transfering the data to the action page. 
+                <ul>
+                    <li>GET : Used to get the information based on inputs U give. Data is shared thru URL</li>
+                    <li>POST : Used to send info(Adding) to the server page.</li>
+                    <li>PUT : Used to update an existing data to the server page</li>
+                    <li>DELETE: Used to delete existing data in the server</li>
+                </ul>
+            </p>
+            <section>
+                <h3>Simple Example of a Form</h3>
+                <p>
+                    <form>
+                        <p>
+                            <input type="number" placeholder="Enter a number" min="20" max="45" id="txtVal1" name ="txtVal1"/>
+                        </p>
+                        <p>
+                            <input type="text" placeholder="Enter a Name for the user" required/>
+                        </p>
+                        <p>
+                            <input type="email" placeholder="Enter a Valid Email Address" required/> 
+                        </p>
+                        <p>
+                            <input type="date" required/> 
+                        </p>
+                        <p>
+                            Select one or more options from the list:
+                            <input type="checkbox">Option 1
+                            <input type="checkbox">Option 2
+                            <input type="checkbox">Option 3
+                            <input type="checkbox">Option 4
+                            <input type="checkbox">Option 5
+                        </p>
+                        <p>
+                            Choose UR Fav actor:
+                            <input type="radio" group="rdActor">Tom Cruise
+                            <input type="radio" group="rdActor">Arnold Swarzeneggar
+                            <input type="radio" group="rdActor">Sylvester Stallone
+                            <input type="radio" group="rdActor">Jim Carrey
+                            <input type="radio" group="rdActor">Rajnikanth
+                        </p>
+                        <p>
+                            Rate UR HTML Skills:
+                            <input type="range" id="txtRange" min="1" value ="8" max="10"/>
+                            <span id="spRange"></span>
+                        </p>
+                        <p>
+                            <input type="text" list="dlData" id="txtQualification" placeholder="Enter the qualification"/>
+                            <datalist id="dlData">
+                                <option>SSLC</option>
+                                <option>Pre University</option>
+                                <option>Under Graduation</option>
+                                <option>Graduation</option>
+                                <option>Post Graduation</option>
+                            </datalist>
+                        </p>
+                        <p>
+                            <input width="40%" type="submit" value="Post Data"/>
+                        </p>    
+                    </form>
+                </p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
