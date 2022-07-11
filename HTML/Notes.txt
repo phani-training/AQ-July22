@@ -1,0 +1,40 @@
+What is HTML?
+ Its a markup language for building Web content in the form Hyper text. Hypertext is a text based content which has links in it that will lead to other content unlike linear text that works like a novel.
+ markup are sp instructions given in the form of Tags<> to the browsers that read the web content and display it in it. 
+ browsers are thin software that are used to read the web content developed in html or its dirivatives. browsers are avilable on all kinds of electronic gadgets include mobile, tabs, laptops, desktops and many more. All OSs that are installed on any electronic gadget will have a browser in it. 
+ With browsers, U dont need any aditional software other than that is provided with the device. 
+ Web content will be created on this HTML(Hypertext markup language) documents or Pages. 
+ Content that U develop, will be shared thru a network of machines using a HTTP protocol.HTTP is a std protocol for kinds of data transfer. Hyper Text Transfer protocol is std format for shareing the data which recommended by w3c, a web based group that defines the stds for web app development. 
+
+ How Web sites or Web Apps are developed?
+ Developer creates a group of such pages called HTML Pages inside one common directory. This directory is placed in a machine that has a software called WEB SERVER. 
+ WEB SERVER is a software that interprets the Web Requests that it recieves from HTTP and returns a web content as a response to the specific User who has made that request.
+ When the response is recieved by the User(Browser), it will interpret the HTML content and displays in the form of the HTML Tags that has mentioned in it. 
+
+What is a Script?
+A Script is a small code that is created using a sp language that is supported by the browsers inside the HTML documents. 
+JS is one such scripting language that is supported by all the browsers in the computing world. It is good to write the scripting code using JS and allow it to be executed on any browser.  
+
+Why Script is required in HTML Docs?
+HTML docs are static content. To create dynamic content we use scripts. All Scripts are executed on the browser which resides in the user environment. Hense it is also called as CLIENT environment. Scripts are executed on the client machine/side, so scripting languages are either client side or server side if it is executed inside the web server itself. 
+
+CLIENT Side Scripts vs. SERVER side Scripts:
+scripting code that is interpreted in the server is called Server side scripting which is done using high end technologies like JSP, ASP, ASP.NET, PHP, Python and other rich programming languages. 
+client side scripting is executed in the browsers. As the code is executed on the client machines, we call them as CLIENT side scripting languages. JS, VBS are some of the popular Client side scripting languages. VBS is lost the race as it is supported only in IE based Brwosers. 
+
+HTML is the fundamental code that one developes for building static web content. Above the HTML comes other ingradients like Styles(CSS), dynamic content(JS), rich DOM Manipulations(jQuery), get the data from a database(REST API) and display the content with more features like Binding, rendering and Single Page App(Angular or React). 
+
+What is an HTML Page: It is text based file with an extension .htm, html that contain HTML Markups. 
+It has 2 classifications: HEAD section and BODY section. 
+Head Section contains info about the Page<META> Tags, Titles, additional links to other documents required to support the current document. This section is not visible in the browser, however the browser will use this data for sharing it to the search engines, Developers can use this info for understanding the doc before then develop further. 
+
+BODY section is the area that will be visible to the users. Here U will write the content required for the document. 
+
+For headings: h1 to h6 ---> h1 is the highest and h6 is the smallest. 
+Divisions of UR page: div tags. U can also use article, section, header, footer instead of div tags if U want to sub divide UR content. 
+paragraphs<p> are small text content that gives info in paragraphs.We use paragraphs to divide a large content into small sections. 
+divs and p tags will end the line and move to the next line with a small gap. 
+To move acontent to a next line, U can use <br/> tag. 
+To draw a single line for better readability U can use <hr/>(Horizontal Rule) 
+
+
