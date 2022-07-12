@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        .main{
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 100px 350px 100px;
+            grid-gap: 10px;
+            background-color: bisque;
+            padding: 5px;
+        }
+        div{
+            border: 2px solid blue;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Grid Layout Example</h2>
+    <p>Grid Layout help is placing the elements of the doc like a grid structure where the elements are placed in both columnar as well as row based presentation</p>
+    <div class="main">
+        <div>Sample Data1</div>
+        <div>Sample Data2</div>
+        <div>Sample Data3</div>
+        <div>Sample Data4</div>
+        <div>Sample Data5</div>
+        <div>Sample Data6</div>
+        <div>Sample Data7</div>
+        <div>Sample Data8</div>
+        <div>Sample Data9</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        footer{
+            position: fixed;
+            bottom: 5px;
+            width: 100%;
+            background-color: black;
+            color:aliceblue;
+            font-size: 20px;
+        }
+
+        p.left{
+            position:relative;
+            left: 30px;
+        }
+
+        p.right{
+            position:relative;
+            right: 130px;
+        }
+        .absolute{
+            position: absolute;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin-top: 50px;">
+        <h1>Basic Heading of the Application</h1>
+        <h1 class="absolute">
+            Content to be above the flow of the document
+        </h1>
+    </div>
+    <p class="right">
+        Position property: The CSS Position property is used to set position for the element so that U can determine where to place the element behind another and can also be used for animation purposes. 
+Static, Fixed, Relative, Absolute are the values for the position property. 
+Static is the default position for all the elements.
+fixed puts the text fixed to the window of the browser, not to the document. It will be relative to the browser window and does not move even if U scroll the window.
+Relative position property is used to set the element relative to its normal position. Use this when U want to move the element from its original location to the new location and it will be based on the original element's position. 
+Absolute position is used to position the element relative to the first parent element's position other than static. Absolute will display the content above the flow of the Document. With this, U can place UR element anywhere within the document and it will sit on top of the flow of the document. 
+    </p>
+    <footer>
+        <i>Training @AQ Insights-2022</i>
+    </footer>
+</body>
+</html>

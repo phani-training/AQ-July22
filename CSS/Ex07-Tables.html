@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 20pt;
+        }
+        .styled-table{
+            width: 95%;
+            margin: 5px 20px;
+            font-size: 0.8em;
+            box-shadow: 0 0 20px red;
+            border: 1px solid blue;
+            /* border-collapse: collapse; */
+        }
+
+        .styled-table thead tr{
+            background-color: lightgreen;
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        .styled-table tr{
+            background-color: greenyellow;
+            text-align: center;
+            font-weight: bolder;
+        }
+        .styled-table tr:nth-of-type(even){
+            background-color: darkolivegreen;
+        }
+    /*2nd row*/
+        .styled-table tr:nth-of-type(2){
+            background-color: red;
+            border: none;
+        }
+        .styled-table  tr:last-of-type{
+            background-color: yellow;
+            text-align: center;
+        }
+
+        .styled-table tbody tr:hover{
+            background-color: orange;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Table Design with CSS</h2>
+    <div>
+        <h2>List of Players with Us</h2>
+        <p>The list of players who give their valuable Comments in our show!!!</p>
+        <table class="styled-table" border="1">
+            <thead>
+            <tr>
+                <th>EmpID</th>
+                <th>EmpName</th>
+                <th>EmpAddress</th>
+                <th>EmpSalary</th>
+                <th>Options</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>123</td>
+                <td>Andrew Flintoff</td>
+                <td>London</td>
+                <td>65000</td>
+                <td><a href="#">Delete</td>
+            </tr>
+            <tr>
+                <td>124</td>
+                <td>Glen Magrath</td>
+                <td>Sydney</td>
+                <td>45000</td>
+                <td><a href="#">Delete</td>
+            </tr>
+            <tr>
+                <td>125</td>
+                <td>Roger Binny</td>
+                <td>Bangalore</td>
+                <td>20000</td>
+                <td><a href="#">Delete</td>
+            </tr>
+            <tr>
+                <td>126</td>
+                <td>Micheal Bevan</td>
+                <td>Canberra</td>
+                <td>35000</td>
+                <td><a href="#">Delete</td>
+            </tr>
+        </tbody>
+            <tr>
+                <td colspan="5">
+                    End of Records
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

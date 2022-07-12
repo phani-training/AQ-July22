@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form based CSS</title>
+    <style>
+        .danger{
+            background-color: red;
+            border: 2px solid red;
+            border-radius: 2px;
+            padding: 5px;
+            cursor: move;
+            color:white;
+            margin: 10px;
+        }
+
+        .info{
+            background-color: rgb(25, 194, 250);
+              border-radius: 2px;
+            padding: 5px;
+            margin: 10px;
+            cursor: move;
+            color:black;
+            border: 2px solid rgb(25, 194, 250);
+        }
+
+        input[type="text"]{
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        input[type="text"]:focus{
+            border: 3px solid goldenrod;
+        }
+
+        input[type="submit"]{
+            width: 90%;
+            background-color: green;
+            color:white;
+            padding: 15px 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        input[type="search"]{
+            transition: width 1.4s ease-in-out;
+        }
+        input[type="search"]:focus{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <input type="search" placeholder="Search Here!!!"/>
+    <input type="text" placeholder="Enter UR Name"/>
+    <input type="text" placeholder="Enter UR Address"/>
+    <input type="text" placeholder="Enter UR Salary"/>
+    <input type="text" placeholder="Enter UR Age"/>
+    <input type="submit" value="Submit Button in action"/>
+    <button class="info">Info based Button</button>
+    <button class="danger">Error based Button</button>
+</body>
+</html>    
+      

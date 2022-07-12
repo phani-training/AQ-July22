@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .products{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .product-card{
+            display: flex;
+            flex-direction: column;
+            padding: 2%;
+            background-color: blanchedalmond;
+            flex: 1 26%;
+        }
+        .product-card img{
+            width: 100%;
+        }
+
+        .product-info{
+            margin-top: auto;
+            padding-top: 20px;
+            text-align: center;   
+        }
+        @media( max-width : 600px){
+            .product-card{
+                flex: 1 45%
+            }
+        }
+        @media( max-width : 920px){
+            .product-card{
+                flex: 1 25%
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="products">
+        <div class="product-card">
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
+            </div>
+            <div class="product-info">
+                <h3>Rain coat</h3>
+                <h6>Price: Rs. 1300</h6>
+            </div>
+        </div>
+        <div class="product-card"> 
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
+            </div>
+            <div class="product-info">
+                <h3>Winter jacket</h3>
+                <h6>Price: Rs. 3000</h6>
+            </div>
+        </div>
+        <div class="product-card">
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
+            </div>
+            <div class="product-info">
+                <h3>Wind Cheater</h3>
+                <h6>Price: Rs. 2500</h6>
+            </div>
+        </div>
+        <div class="product-card">
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
+            </div>
+            <div class="product-info">
+                <h3>Jogging Jacket</h3>
+                <h6>Price: Rs. 1450</h6>
+            </div>
+        </div>
+        <div class="product-card">
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
+            </div>
+            <div class="product-info">
+                <h3>Cool Summer Jacket</h3>
+                <h6>Price: Rs. 2310</h6>
+            </div>
+        </div>
+        <div class="product-card">
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0938/8938/products/10231100205_1_1315x1800_300_CMYK_1024x1024.jpeg?v=1445623369"/>
+            </div>
+            <div class="product-info">
+                <h3>Multi Utility Jacket</h3>
+                <h6>Price: Rs.3000</h6>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,10 @@
+CSS is a new way of designing HTML pages in a  more structured manner. Old html used to have attributes to set the styles for the HTML elements. Maintaining it was very difficult and it was not reusable either for the elements or for the type of the style(Classes).
+CSS is easy to learn and has a simple syntax and can be set internally, inline and externally. They are reusable and maintainable.
+The idea is to seperate the UI and the style feature. 
+CSS can be set to the HTML elements in 3 different ways:
+inline style: An attribute called style is available for all HTML elements which can be used to set styles to the elements. Advantage is that it is handy for a specific element. U cannot reuse the same style for another element even if it belongs to the same type. 
+Internal Styling: There is a style tag avaialable in html that can be set for all the elements at one place, usually at the begining of the htmldoc.
+External Styling: If U want to have a common look and feel on all the pages of UR website, then U can create a seperate Styling file of css with an extension .css and include it in all the HTML pages of the website. We use link tag to link the CSS file in our html document. 
+
+float: Allows the content to wrap around it when the element is placed to right, left based on the content. It is used in combination with layouts and panels. 
+
