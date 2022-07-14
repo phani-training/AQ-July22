@@ -15,4 +15,22 @@
 - Positions and Displays
 
 ## Day 3
--JavaScript
+- JavaScript
+- Basics of JS
+- Variables: let vs. var vs. const
+- UI Functions: alert, prompt and confirm
+- Data Types and Conversions
+- Creating Functions
+- Arrays in JS
+- Classes and Objects
+- Intro to Bootstrap
+
+## Day 4
+- Classes and Objects
+- Intro to Bootstrap
+- Creating Entity Classes and Repository Classes.
+- Manipulating DOM Elements
+- Unobtrusive JS. 
+- Event Handling: addEventListener API
+- LocalStorage for local Persistance. 
+- CRUD Based BookStorage App.
