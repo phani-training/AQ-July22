@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let value1 = parseFloat(prompt("Enter the First Value"));
+        let value2 = parseFloat(prompt("Enter the Second Value"));
+        let operand = prompt("Enter the Operand as + or - orX or /");
+        if ((!isNaN(value1)) && (!isNaN(value2))) {
+            switch (operand) {
+                case "+":
+                    alert("The Result: " + (value1 + value2));
+                    break;
+                case "-":
+                    alert(`"The Result ${value1 - value2}`);
+                    break;
+                case "X":
+                    alert(`"The Result ${value1 * value2}`);
+                    break;
+                case "/":
+                    alert(`"The Result ${value1 / value2}`);
+                    break;
+                default:
+                    break;
+            }
+        }else{
+            alert("Invalid Value")
+        }
+    </script>
+</body>
+
+</html>

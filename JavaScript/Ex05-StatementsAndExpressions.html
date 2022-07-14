@@ -1,0 +1,51 @@
+<script src="./scripts/mathFunctions.js"></script>
+<script>
+    const ifFunc = (condition) =>{
+        //evaluate the condition to a boolean. 
+        if(condition){
+            alert("true")
+        }else
+            alert("false")
+    }
+
+    const ifElseCondition = (value) => {
+        if (value == "Morning")
+            alert("Good Morning");
+        else if (value == "Afternoon") {
+            alert("Good Afternoon");
+        } else {
+            alert("Good Evening");
+        }
+    }
+    const switchCondition = (v1, v2, operand)=>{
+        switch(operand){
+            case "+": return addFunc(v1, v2);
+            case "-": return subFunc(v1, v2);
+            case "X": return mulFunc(v1, v2);
+            case "/": return v1 / v1;
+            default: return 0.0;
+        }
+    }
+    const whileLoopDemo = () =>{
+        let i =0;
+        while(i < 3){
+            console.log(i);
+            i++;
+        }
+        console.log("After the loop")
+    }
+    const dowhileLoop = () =>{
+        let condition = true;
+        do {
+            let name =prompt("Enter the Name");
+            console.log(name);
+            condition = confirm("Do U want to add Name again?");
+        } while (condition);  
+    }
+    // ifFunc("string" == typeof("Apple"));
+    // ifElseCondition("Evening")
+    // const res = switchCondition(123,23, "X");
+    // alert(res);
+    //whileLoopDemo();
+    dowhileLoop();
+</script>

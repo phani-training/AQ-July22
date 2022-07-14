@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <script src="./scripts/bookstore.js"></script>
+    <script src="./scripts/helperFunctions.js"></script>
+    <title>BookStore App</title>
+    <script>
+        const obj = new BookRepositore(); //Create one and only one instance of the BookRepositore
+
+        function fillBookDetails(book){
+            setInputValue('txtEditId', book.id)
+            setInputValue('txtEditTitle', book.title)
+            setInputValue('txtEditPrice', book.price)
+            setInputValue('txtEditAuthor', book.author)
+        }
+        function populateTable(){
+             //Get existing books in the store. 
+             let books = obj.getAllBooks();
+             //Get the reference of the table where U want to display the books...
+             const table = getElement("tblRecords");
+             //initialize with thead data...
+             table.innerHTML = '<tr><th> Book ID</th><th> Book Title</th><th> Book Price</th><th> Book Author</th><th> Options</th></tr>'
+             //iterate thro the collection and create row for each book and add it to the table. 
+             for (const book of books) {
+                const row =`<tr><td>${book.id}</td><td>${book.title}</td><td>${book.price}</td><td>${book.author}</td><td><a href="#" class="btn btn-info" onclick = "setBook(${book.id})">Edit</a><a href="#" class="btn btn-danger" onclick = "deleteBook(${book.id})">Delete</a></td></tr>`
+                table.innerHTML += row;
+             }
+        }
+
+        function deleteBook(id){
+            const ans = confirm("Do U really want to delete?");
+            if(ans)
+            {
+                obj.deleteBook(id);
+                alert("Book Deleted from the store, Click on the Book List to get Books");
+            }
+        }
+        function setBook(id){
+            const foundBook = obj.getBookById(id);
+            fillBookDetails(foundBook)
+        }
+
+        function onAddClick(){
+            //get all the input values and store it in variables
+            const id = getInputValue('txtId')
+            const title = getInputValue('txtTitle')
+            const price = getInputValue('txtPrice')
+            const author = getInputValue('txtAuthor')
+            //create the book object with those variables
+            const newBook = new Book(id, title, price, author);
+            //call the function of the repositore to add the book.
+            obj.addNewBook(newBook); 
+            //display a message if required.
+            alert("Book added successfully, please click on the List of Books to get the data"); 
+        }
+        function onUpdateClick(){
+
+        }
+        function init(){
+            // const book = new Book(1, "The Tempest", 500, "William Shakespeare");
+            // fillBookDetails(book);
+            getElement('aLink1').addEventListener("click", populateTable);
+            getElement('btnAdd').addEventListener("click", onAddClick);
+            getElement('btnUpdate').addEventListener("click", onUpdateClick);
+            
+        }
+        window.addEventListener("load", init);
+    </script>
+</head>
+<body>
+    <div>
+        <div class="m-4 p-5 bg-success text-white rounded">
+        <h1 class="display">BookStore Data Management</h1>
+        <hr>
+        <nav class="nav-bar">
+            <ul class="nav justify-content-center">
+                <li class="nav-item bg-info rounded m-5"><a class="nav-link m-4 text-white" id="aLink1" href="#">List of Books</a></li>
+                <li class="nav-item bg-info rounded m-5"><a class="nav-link m-4 text-white" href="#">Add New book</a></li>
+                <li class="nav-item bg-info rounded m-5"><a class="nav-link m-4 text-white" href="#">About Us</a></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="card m-4">
+            <h2>List of Books</h2>
+            <hr>
+            <div class="card-body">
+                <table class="table table-bordered table-hover table-striped" id="tblRecords">
+                    <thead class="table-dark">
+                        
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div class="card m-4 p-5">
+            <h2>Edit Book Details</h2>
+            <hr>
+            <div class="card-body">
+                <h2 class="card-title">Details of the Book</h2>
+                <hr>
+                <div>
+                    <p><input placeholder="Book ID" class="form-control" id="txtEditId" type="text"></p>
+                    <p><input placeholder="Book Title" class="form-control" id="txtEditTitle" type="text"></p>
+                    <p><input placeholder="Book Price" class="form-control" id="txtEditPrice" type="text"></p>
+                    <p><input placeholder="Book Author" class="form-control" id="txtEditAuthor" type="text"></p>
+                    <p><button class="btn btn-info rounded" id="btnUpdate">Save changes</button></p>
+                </div>
+            </div>
+        </div>
+        <div class="card m-4 p-5">
+            <h2>Add New Book</h2>
+            <hr>
+            <div class="card-body">
+                <p>Enter Book ID:<input class="form-control" type="text" id="txtId"></p>
+                <p>Enter Book Title:<input class="form-control" type="text"  id="txtTitle"></p>
+                <p>Enter Book Price:<input class="form-control" type="text"  id="txtPrice"></p>
+                <p>Enter Book Author:<input class="form-control" type="text"  id="txtAuthor"></p>
+                <p><button id="btnAdd" class="btn rounded btn-danger">Save changes</button></p>
+            </div>
+        </div>
+    </div>
+</html>

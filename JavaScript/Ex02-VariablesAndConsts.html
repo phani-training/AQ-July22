@@ -1,0 +1,35 @@
+<script>
+    'use strict';
+    let content ="Apple123" //global variable creation and is accessible across the scripts of the document. 
+    const otherContent ="Apple123"
+
+    //otherContent ="something new" //it is an error. 
+    document.write(content)
+    document.write(otherContent)
+
+    //let vs var...
+    let fruit; //For undefined....
+    console.log(typeof(fruit));
+    fruit = "Apple" + 123 //For String
+    console.log(typeof(fruit))
+    fruit = 123 + 23 //For Number
+    console.log(typeof(fruit));
+    fruit = true; //For boolean
+    console.log(typeof(fruit));
+    fruit ={ id : 123, name : "Phaniraj", address : "Bangalore"}//For object
+    console.log(typeof(fruit));
+    fruit = ["Apple", "Mango", "Orange"]; //For Array
+    console.log(typeof(fruit));
+    fruit = new Date(); //For Date
+    console.log(typeof(fruit));
+
+    function testCode(){
+        let fruit = "Mango"//Redefinition if in the same scope. 
+        console.log(fruit)
+    }
+    testCode()
+    console.log(fruit);
+
+
+
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <script src="./scripts/mathFunctions.js"></script>
+    <script src="./scripts/helperFunctions.js"></script>
+    <script>
+        const performOperation = (v1, v2, op)=>{
+            switch(op){
+            case "Add": return addFunc(v1, v2);
+            case "Subtract": return subFunc(v1, v2);
+            case "Multiply": return mulFunc(v1, v2);
+            case "Divide": return v1 / v1;
+            case "Square": return squareFunc(v1);
+            case "SquareRoot" : return sqrRoot(v1);
+            default: return 0.0;
+        }
+        }
+        function onClickEvent(){
+            const v1 = getInputValue("txtNum1");
+            const v2 = getInputValue("txtNum2");
+            const op = getInputValue("slOperand");
+            const res = performOperation(v1, v2, op);
+            getElement("spResult").innerText = res;
+        }
+    </script>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="h1">Math Calc Program!</h1><hr>
+    </div>
+    <div class="row">
+        <p class="col-md-2"/>
+        <p class="col-md-6">
+            <input  class="form-control" type="number" id="txtNum1" placeholder="Enter the First Value"/>
+            <select  class="form-select" id="slOperand">
+                <option>Add</option>
+                <option>Subract</option>
+                <option>Multiply</option>
+                <option>Divide</option>
+                <option>Square</option>
+                <option>SquareRoot</option>
+            </select>
+            <input class="form-control" type="number" id="txtNum2" placeholder="Enter the Second Value"/>
+            <button class="form-control btn btn-info" onclick="onClickEvent()">=</button>
+            <span id="spResult"></span>
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="./scripts/helperFunctions.js"></script>
+    <script>
+        //create a blank array...
+        let data = new Array();
+        
+        function readAndDisplay(){
+                //get the reference of the txtbox and get its value..
+                let inputValue = getInputValue("txtEntry");
+                //add it to the array.
+                data.push(inputValue);
+                const ul = getElement("lstInputs")
+                ul.innerHTML = "";
+                for (const item of data) {
+                    ul.innerHTML += `<li>${item}</li>`
+                }
+        }
+        //This function will initialize the data,event handling code for the page
+        const init =() =>{
+               //get the reference of the element on which U want to handle the event.
+               const btn = document.getElementById("btnSave"); 
+               //add an event listener to the element.
+               if(btn == undefined){
+                alert("btn is not selected");
+                return;
+               }
+               btn.addEventListener("click", readAndDisplay);  
+        }
+        window.addEventListener("load", ()=>{
+            init();
+        })
+    </script>
+</head>
+<body>
+    <h1>Data Entry App:</h1>
+    <div>
+        <p>
+            <label for="txtEntry">Enter the item Name:</label>
+            <input id="txtEntry"/>
+            <button id="btnSave">Save</button>
+        </p>
+    </div>
+    <div>
+        <ul id="lstInputs">
+
+        </ul>
+    </div>
+</body>
+</html>

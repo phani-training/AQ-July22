@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <script>
+        let items =[];
+        function onclick(){
+            if(localStorage == undefined){
+                alert("Please upgrade UR Browser to support HTML5")
+            }else{
+                if(localStorage.getItem("mySavedData") != undefined){
+                    items = JSON.parse(localStorage.getItem("mySavedData"));
+                }
+                const value = document.getElementById("txtItem").value;
+                items.push(value);
+                localStorage.setItem("mySavedData", JSON.stringify(items));
+            }
+        }
+        function onShow(){
+            items = JSON.parse(localStorage.getItem("mySavedData"))
+            const ol = document.getElementById("itemsList");
+            ol.innerHTML ="";
+            for (const item of items) {
+                ol.innerHTML += `<li class="list-group-item">${item}</li>`;
+            }
+        }
+        function init(){
+            document.getElementById("btnSave").addEventListener("click", onclick);
+            document.getElementById("btnShow").addEventListener("click", onShow);
+        }
+        window.addEventListener("load", init);
+    </script>
+</head>
+<body>
+    <div style="margin: 5px;">
+        <div style="margin: 5px; display: inline-block; width: 45%;">
+            <h3 class="rounded-pill bg-primary text-white p-3">Add New Item to Local storage</h3> <hr>
+            <p>
+                <input placeholder="Add your Fav Item" id="txtItem"/>
+                <button id="btnSave">Save to LocalStorage</button>
+            </p>
+        </div>
+        <div style="margin: 5px; display: inline-block; width: 40%; vertical-align: top;">
+            <h3 class="rounded-pill bg-primary text-white p-3">List of All Saved Items</h3><hr>
+            <button id="btnShow">Display all Items</button>
+            <p> 
+                <ol id="itemsList" class="list-group list-group-numbered">
+
+    
+                </ol>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

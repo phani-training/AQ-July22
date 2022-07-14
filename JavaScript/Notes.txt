@@ -1,0 +1,64 @@
+JavaScript is a client side scripting language used create dynamic web content in the html pages. It is recommended by all major Organizations and w3c for creating client side code. All browsers will use JS as their default scripting language. However, browsers do support multiple scripting languages in them. Other than JS, for all the other scripting languages, U should use an attribute called type while inserting script in the html document.
+JS standards are maintained by a group of Organizations called ECMA(European Computers Manufacturers Association) and is based on the script recommendations given by them. We call it as ES(Ecma Script) version. Any new features that is incorporated in JS will be recommendations from ECMA. 
+JS is now popular among server side also. Nodejs is a platform based on JS that allows to run js on command prompt(Terminals). There by making JS to behave like Server side Programming that performs operations like database interaction, File IO handling and socket programming. 
+JavaScript is now used for fullStack development: MEAN, MERN Stack etc.
+
+JS comes with a set of UI functions that can be used to interact with the user. 
+alert => like a message box that displays a message to the user. 
+prompt => like alert, it displays the message/question and allows the user to type something as input to that message/question and returns that input. 
+confirm => It is very similar to alert but with 2 buttons like OK and Cancel allowing the user to select the button and return the result of the selection. 
+
+Variables in JS:
+JS stores the data as implicit variables. There is no specific data type for the variables. It holds the type based on the value to which it is assigned to. 
+JS uses var(old), let and const keywords to declare variables in it.
+var is a older format o declaring variables in JS. From ES5 onwards, JS introduced 2 keywords to declare the members: let is more scope based than var but works similar to var, and const is used to create members that dont modify and is more optimized while it is refered in the code. 
+Any error info in the script can be viewed in the Developer Console of the Browser(F12)
+
+let is prefered over var as let is more scope based and ensures that the variable declared will not be allowed to redeclare again. var does not care about this redefinition. So let is more scope based and safe way of writing JS code. 
+Data types of JS: string, boolean, number and object.
+If a variable is declared but not assigned, it will be undefined. Any data is that is not identifiable by the JS is considered as undefined. 
+Every other thing in JS is object. 
+Any string can be converted to a number using 3 methods:
+parseInt => String to a whole number.
+parseFloat => String to a float number.
+Number => Any type to a number. 
+While the conversion happens, if the value U R converting is not a valid number, the methods will return a NaN(Not a Number).Its status can be checked using a method called isNaN(value) which returns true if its not a valid Number. 
+
+Functions in JS: Functions in JS can be developed in 3 ways:
+Named Functions => Functions are provided with Name and U can invoke the method by its Name. 
+Anonymous Functions => Functions are created with no names but assigned to a variable, UR variable behaves like a function. 
+Lambda Functions => Anonymous methods can be simplified and written using lambda methods. They are helpful in creating methods that can work like callback functions of UR Event driven programming model. 
+Arrays are collection of data that is recommended to be of the same type. Arrays in JS can allow to add, remove, update and find the data in the collection after it is created. Arrays are more powerful.
+Arrays can be created in 2ways:
+using array class object
+using [] operator.
+
+DOM Manipulation:
+document represents the html document. 
+U can get the reference of the elements using the document object
+getElementById method is used to get the reference of an element by its id.
+getElementsByTagname is used to get the collection of html elements matching to the tagname. 
+getElementsByClassName is used to get all the elements matching to the class(CSS Class) that it is assigned to.
+
+Get/Set values to the elements:
+innerHTML => Used to get/set html content to the container elements.
+innerText => Used to get/set text content to the container elements.
+value => Used to get/set values to the input and select elements.
+
+It is good practice to create helper functions to work with DOM elements. 
+
+To handle events of the DOM elements, we can use addEventListener API that is available for all DOM Elements.
+window.addEventListener is used to associate events of the window object with functions that define the event action. Important events of the window include load, click.
+It is a good practice to use Unobtrusive JS where U have clean seperation of the UI Markups and the JS code. 
+
+Classes in JS:
+There are 3 ways of creating classes in JS:
+Singleton types: A single reference of the object will be created without any formal definition of a class. 
+Using Function: Old JS allowed function keyword to create class reference and create objects with it. A Class technically is a User defined type. A UDT is created by defining it with its features. The variables of it will be created in a sp. way, these variables are called as OBJECTs. Objects will have OOP features in it which comes with every class. 
+function would return a new object which had its own set of data and functions to manipulate the data. 
+objects of a class are created using new keyword. Each object will have its own data. Main purpose of the funtions is to modify the data like setting, reading and computing.
+class keyword that was introduced in ES6: Now with new JS, Uc an create classes using class keyword. with this, U can get a look of a typical OOP code. It also supports inheritance. Note that JS is not pure object oriented programming.  
+
+
+
+

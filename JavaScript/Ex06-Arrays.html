@@ -1,0 +1,26 @@
+<script>
+    const data = [];//create a blank array...
+    data.push("Apples")//adds the item to the bottom of the list
+    data.push("Mangoes")
+    data.push("Oranges")
+    data.push("PineApples")
+    data.push("Gauvas")
+    data.push("Grapes")
+    data.unshift("Strawberry");//inserts anywhere, default is at the begining. 
+
+    data.forEach(function(value){
+        console.log(value);
+    })
+    const operation = confirm("Press ok to delete or cancel to replace");
+    const index = prompt(`Enter the index value starting with 0 to ${data.length - 1}to delete\replace`);
+    if(operation){
+    data.splice(index, 1);
+    }else{
+        const newValue = prompt("Enter the new value");
+        data.splice(index, 1, newValue);
+    }
+    data.forEach(function(value){
+        console.log(value);
+    })
+
+</script>

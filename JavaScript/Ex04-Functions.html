@@ -1,0 +1,25 @@
+<script>
+    //Example of Named Functions
+    function addFunc(v1, v2) {
+        let result = v1 + v2;
+        return result;//return keyword is used within a function to exit it. Optionally, U can pass a value that will return to the caller of this method. 
+    }
+    //Example of Anonymous methods
+    const subFunc = function (v1, v2) {
+        const res = v1 - v2;
+        return res;
+    }
+
+    const mulFunc = (v1, v2) => v1 * v2;
+
+    
+
+    let result = addFunc(123, 234);
+    document.write(`<p>The Result of Addition: ${result}</p>`)
+
+    result = subFunc(123, 23);
+    document.write(`<p>The Result of Subtraction: ${result}</p>`);
+
+    result = mulFunc(12, 3);
+    document.write(`<p>The Result of Multiplication: ${result}</p>`);
+</script>

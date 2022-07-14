@@ -1,0 +1,67 @@
+<script src="./scripts/helperFunctions.js"></script>
+<script>
+const singletonDemo = () => {
+    const empRecord ={};
+    empRecord.empName = "Phaniraj";
+    empRecord.empAddress ="Bangalore"
+    empRecord.empSalary = 65000;
+    
+    console.log(empRecord)
+    console.log(`${empRecord.empName} is from ${empRecord.empAddress} and earns a salary of Rs. ${empRecord.empSalary}`);
+
+    const copy = empRecord;
+    copy.empAddress = "Mysore"
+    console.log(empRecord.empAddress)
+}
+
+//Old JS way of creating classes:
+const book = function(ide){
+    this.bookId =i, title, pricd;
+    this.bookTitle =title;
+    this.bookCost = price; 
+
+    this.toString = () => `${this.bookTitle}, ${this.bookCost}, ${this.bookId}`;
+}
+
+//New way of creating classes:
+class Customer{
+    constructor(id, name, address, billDate, billAmount){
+            this.id = id;
+            this.name = name;
+            this.address = address;
+            this.billAmount = billAmount;
+            this.billDate = billDate;
+    }
+
+    toString(){
+        return `<tr><td>${this.id}</td><td>${this.name}</td><td>${this.address}</td><td>${dateFormat(this.billDate)}</td><td>${this.billAmount}</td></tr>`;
+    }
+}
+const classDemo = () =>{
+    const book1 = new book(11, "2 States", 400);
+    console.log(book1.toString());
+
+    const book2 = new book(12, "The Tempest", 1400);
+    console.log(book2);
+
+}
+
+const newObjectSyntax =() =>{
+    const cst =new Customer(111, "Phaniraj", "Bangalore", new Date('10/07/2022'), 7600);
+    //document.write(cst.toString());
+    const cst2 =new Customer(112, "Andrew", "San francisco", new Date('10/05/2021'), 17600);
+    //document.write(cst2);
+    const tbl = getElement("tblRecords");
+    tbl.innerHTML += cst.toString();
+    tbl.innerHTML += cst2.toString();
+}
+//singletonDemo();
+//classDemo()
+
+</script>
+<body>
+    <table id="tblRecords" border="1">
+        
+    </table>
+<script>newObjectSyntax()</script>;
+</body>
