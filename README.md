@@ -12,7 +12,10 @@
 - Styles
 - Layouts
 - Text Formatting
-- Positions and Displays
+- Positions and Displays.
+- FlexBoxes
+- Grid Layout
+- User Responsive Web Design(RWD).
 
 ## Day 3
 - JavaScript
