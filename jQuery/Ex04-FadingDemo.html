@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+    <script src="./jquery.min.js"></script>
+     <script>
+        $(function(){
+            $("button:first").click(function(){
+                $(".block").fadeToggle(2000, function(){
+                    const content = $("button:first").text() == "Fade Out" ? "Fade In" : "Fade Out";
+                    $("button:first").text(content);
+                });
+            })
+            // $("button:last").click(function(){
+            //     $(".block").fadeOut(2000);
+            // })
+
+        })
+     </script>
+</head>
+<body>
+    <div class="block">Some Data</div>
+    <!-- <button>Fade In</button><button>Fade out</button>     -->
+    <button>Fade Out</button>
+</body>
+</html>

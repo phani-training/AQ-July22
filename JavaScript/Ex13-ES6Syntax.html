@@ -1,0 +1,38 @@
+<script>
+    //Creating class as expression
+    const Customer = class{
+        constructor(id, name) {
+            this.id = id;
+            this.name = name;
+        }
+
+        getDetails(){
+            return `${this.name} with id ${this.id}`
+        }
+    }
+
+    const obj = new Customer(123, "Phaniraj");
+    console.log(obj.getDetails());
+    //Class is only a nice way of creating functional classes of older version of JS. 
+    console.log(typeof(Customer))
+    //Hoisting of a function/Class makes the new JS ensure that any function/object should be used only after the declaration is complete. 
+    
+    func();
+    function func() {
+        console.log("Test Func");   
+    }
+    func();
+    const Fruit = function(){
+        console.log("Fruit is created")
+    }
+          
+        const f = new Fruit();
+        const f2 = new Fruit();
+        const f3 = new Fruit();
+        const f4 = new Fruit();
+
+        var data;
+        console.log(data);
+        data =123;
+
+</script>

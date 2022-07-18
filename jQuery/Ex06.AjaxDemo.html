@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function updateDisplay(selector){
+            selector = selector.replace(" ", "");
+            selector = selector + ".txt";
+            let url = selector;
+            var req = new XMLHttpRequest();
+            req.open("GET", url);
+            req.onload = () =>{
+                document.getElementById("pre").innerText = req.response;
+            }
+            req.send();
+        }
+        function init(){
+            document.getElementById("selector").onchange = function(){
+                let selected = document.getElementById("selector").value;
+                updateDisplay(selected); 
+            };
+        }
+        window.addEventListener("load", init);
+    </script>
+</head>
+<body>
+    <h1>Content Viewed thru Ajax</h1>
+    <hr>
+    <form>
+        <select id="selector">
+            <option>Data 1</option>
+            <option>Data 2</option>
+            <option>Data 3</option>
+            <option>Data 4</option>
+        </select>
+    </form>
+    <h2>Details of the data:</h2>
+    <div id="pre" style="width: 60%; height: 350px;">
+        Some Default content
+    </div>   
+</body>
+</html>

@@ -1,0 +1,31 @@
+<script>
+    //By default, all members of JS classes are public. 
+    //From ES2020, JS supports private members in it 
+    class Patient{
+        #id;
+        #name;
+        #bill;
+        constructor(id,name, bill){
+            this.#id = id;
+            this.#name =name;
+            this.#bill = bill
+        }
+
+        #readData(){ //private method in JS...
+            return `${this.#name}`;
+        }
+
+        readDataPublic(){
+            return this.#readData();
+        }
+        //in operator is used to check if the object has a private field in it. 
+        static checkForField(obj){
+            return #name in obj; 
+        }
+    }
+
+    const p =new Patient(213, "Phaniraj", 4000);
+    //console.log(p.#name);
+    console.log(p.readDataPublic());
+    console.log(Patient.checkForField(p));//true....
+</script>

@@ -1,0 +1,110 @@
+<script>
+    //Storing the data in the form of key-value pairs are called as Maps. Similar to dictionary data structure of C++. 
+    //In the key-value pair of each element in the map, key is unique and value can be same. 
+
+    let users = new Map();
+    function signUp(username, password){
+        //Key is unique...
+        if(users.has(username)){
+            throw new Error("User already exists");
+        }
+        users.set(username, password);
+    }
+    function signIn(username, password){
+        if(!users.has(username)){
+            throw new Error("Username not found");
+        }else{
+            const isTrue = (users.get(username) == password);
+            return isTrue == true ? "User Logged in Successfully" : "Password incorrect";
+        }
+    }
+    function clearFields(){
+        document.getElementById("txtNewUser").value = "";
+        document.getElementById("txtNewPwd").value = "";
+        document.getElementById("txtUser").value = "";
+        document.getElementById("txtPwd").value = "";
+    }
+    function hideDivs(){
+        let divs = document.getElementsByTagName("div");
+        for (const index in divs) {
+            if(index > 0){
+                divs[index].style.display = "none";
+            }
+        }
+    }
+    const showDiv = (id) => {
+        hideDivs();
+        document.getElementById(id).style.display = 'block';
+    }
+    function onRegister(){
+        const span = document.getElementById("spError");
+        //get the input values
+        const username = document.getElementById("txtNewUser").value;
+        const pwd = document.getElementById("txtNewPwd").value;
+        //call the signUp function to store the data into map
+        try {
+            signUp(username, pwd);
+            document.getElementById("spCount").innerText = users.size;
+            span.innerText ="User Registered successfully!, Please login"
+        } catch (error) {
+            span.innerText = error.message
+        }finally{
+            clearFields();
+
+        }
+        //update the error message for any exception.   
+    }
+
+    function onLogin(){
+        const span = document.getElementById("spError");
+        //get the input values
+        const username = document.getElementById("txtUser").value;
+        const pwd = document.getElementById("txtPwd").value;
+        //call the signUp function to store the data into map
+        try {
+            const msg = signIn(username, pwd);
+            span.innerText = msg;
+        } catch (error) {
+            span.innerText = error.message
+        }finally{
+            clearFields();
+        }   
+    }
+    
+    function init(){
+        hideDivs();
+        document.getElementById("aSignUp").addEventListener("click", ()=>{
+             showDiv("signUp");   
+        })
+        document.getElementById("aSignIn").addEventListener("click", ()=>{
+             showDiv("signIn");   
+        })
+        document.getElementById("btnRegister").addEventListener("click", onRegister);
+        document.getElementById("btnLogin").addEventListener("click", onLogin);
+    }
+    window.addEventListener("load", init);
+</script>
+<body>
+    <h1>Welcome to our Website</h1>
+    <div>
+        <nav>
+            <a id="aSignUp" href="#">New User? Sign Up</a>
+            <a id="aSignIn" href="#">Old User? Sign in</a>
+        </nav>
+        <p style="float:right">The Current Registered Users: <span id="spCount"></span></p>
+    </div>
+    <hr>
+    <div id="signIn">
+        <h2>Enter UR Login Credentials!!</h2><hr>
+        <p><input type="text" name="" id="txtUser"></p>
+        <p><input type="password" name="" id="txtPwd"></p>
+        <p><button id="btnLogin">Login</button></p>
+    </div>
+    <div id="signUp">
+        <h2>Enter UR Registration Details!!</h2><hr>
+        <p><input type="text" name="" id="txtNewUser"></p>
+        <p><input type="password" name="" id="txtNewPwd"></p>
+        <p><button id="btnRegister">Register</button></p>
+    </div>
+    <span id="spError" style="color:indianred; background-color: burlywood; "></span>
+</body>

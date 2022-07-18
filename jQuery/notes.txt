@@ -1,0 +1,11 @@
+What is jQuery?
+jQuery is a library of JS used to perform DOM manipulations in a very quicker manner. It allows to write "less code and get more". 
+jQuery is a single JS file that can be downloaded and consumed like any other JS file. Its API will be used to develop rich UI for Web with animations, DOM manipulations and many more. jQuery is actually JS. U work with jQuery using JS. 
+There are 2 versions of jQuery available: minified version that is used by all programmers and other is the pretty version which will have a readable code which could be further customized and extended. Most of the time, we will use minified version as we dont change any APIs of the jQuery but only consume it. 
+jQuery can also be included thru' CDN(Content delivery network) where the lib will be loaded from the nearest Cloud server and consumed in UR App.
+U will refer the APIs of jQuery like any other JS file.
+
+$(document).ready(()=>{
+    alert("jQuery loaded successfully")
+});
+$ is the short form of jQuery lib. The lib is a global object that will behave like a function. It takes an arg of a selector(Any DOM selector very similar to CSS selector). ready is a event handler for load event which will be invoked when the loading of the document is completed. The function takes an arg of a callback function that will be invoked when the document is loaded into the memory of the browser. It is very similar to load event of the window object. 

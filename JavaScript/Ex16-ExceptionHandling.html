@@ -1,0 +1,59 @@
+<script>
+    function testFunc(arg) {
+        if ((arg == "Trainer") || (arg == "Trainee")) {
+            console.log("Welcome to AQ Training")
+        } else {
+            throw "Invalid Visiters" //throw is a keyword used to raise an exception within an Application if a condition is not satified for an Application execution. 
+        }
+    }
+//All Errors in JS are based on Error object. There are other Exception classes like TypeError, SyntaxError and many more.
+    function testFuncWithErrorObject(arg){
+        if ((arg == "Trainer") || (arg == "Trainee")) {
+            console.log("Welcome to AQ Training")
+        } else {
+            throw new Error("Message of the error") 
+        }
+    }
+
+    function typeErrorExample(){
+        try{
+            let res = addFunc(123, 23)
+        }catch(e){
+            console.log({name: e.name, details: e.message})
+        }
+    }
+    typeErrorExample();
+
+    function isValidJson(str){
+        try{
+            JSON.parse(str);
+            return true;
+        }catch{//Not mandatory to create Error objcts in the catch block..
+            return false;
+        }finally{
+            console.log("Executes on all conditions")
+        }
+    }
+    if (isValidJson(`{"name":"Phaniraj"}`))
+        console.log("valid json");
+    else
+        console.log("invalid json")
+
+    function testingFinally(){
+        try{
+            //throw "Error";
+            return 1;
+        }catch{
+            return -1;
+        }finally{//Executes on all conditions even after the return statement. 
+            return 2;
+        }
+    }
+    console.log(testingFinally());
+
+    try {
+        testFuncWithErrorObject("CEO");
+    } catch (err) {
+        console.error(err.message)//Displays the error message in red color with danger icon. 
+    }
+</script>

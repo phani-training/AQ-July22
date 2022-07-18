@@ -1,0 +1,36 @@
+<script>
+    /*
+    ES6 comes with keywords extends and super to perform inheritance in more simplified manner compared to the older syntax which was done using prototype. 
+    */
+
+   class Employee{
+    constructor(id, name){
+        this.id = id
+        this.name = name
+    }
+    toString(){
+        return `${this.name} and ${this.id}`
+    }
+    static testFunc(){
+        console.log("testFunc without an object")
+    }
+   }
+
+   class RegularEmployee extends Employee{
+    constructor(id, name, salary){
+        super(id, name);
+        this.salary= salary;
+        this.constructor.testFunc();
+    }
+    toString(){
+        let data = super.toString();
+        data += ` and ${this.salary}`
+        return data;
+    }
+   }
+
+   const obj = new RegularEmployee(123, "Name", 56000);
+   console.log(obj.toString())
+   RegularEmployee.testFunc();//Invoking a static method without an object .
+   
+</script>

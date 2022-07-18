@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .heading, .panel{
+            padding: 10px;
+            text-align: center;
+            background-color: blanchedalmond;
+            border: 2px solid red;
+            margin: 5px;
+        }
+        .panel{
+            padding: 50px;
+            display: none;
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".heading").click(function(){
+                $(".panel").slideToggle("slow", function(){
+                    const heading = $(".heading> a").text() == "Show Details" ? "Hide Details" : "Show Details";
+                    $(".heading>a").text(heading)
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="heading">
+        <a href="#">Show Details</a>
+    </div>
+    <div class="panel">
+        Display some Content to the User.
+    </div>
+</body>
+</html>

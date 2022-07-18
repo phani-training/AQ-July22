@@ -59,6 +59,23 @@ function would return a new object which had its own set of data and functions t
 objects of a class are created using new keyword. Each object will have its own data. Main purpose of the funtions is to modify the data like setting, reading and computing.
 class keyword that was introduced in ES6: Now with new JS, Uc an create classes using class keyword. with this, U can get a look of a typical OOP code. It also supports inheritance. Note that JS is not pure object oriented programming.  
 
+strings in jS can be created in 2 ways: string literals and using new keyword.
+strings in JavaScript are primitive types. They are immutable. When U modify a string, u always get a new string. U can use '' or "" to set strings to a variable. With ES6,U have interpolation syntax using back-tick where U can place the string literals with variables of the code using a place holders as ${}.
+All strings in JS will be objects from  Primitive type called String. With this, comes a set of APIs that can be used to work with strings. 
+String conversion can happen in any of the 3 ways:
+String(value) => String function is used to convert any data to string. 
+"" + value  => Using concatination, strings will internally convert the value to string. 
+value.toString() => toString method is used to convert any type to a string but it will not work for null and undefined data and throws an exception.
+
+ES6 inheritance:
+JS gives extends to inherit a class into it. The class that extends is called as Base class and the class to which it is extended is called Derived class. 
+In the constructor, U must call super() to refer the immediate base class constructor and pass the relevant arguments.
+Use the super to call methods of the base class in the derived class methods. 
+All methods of the class will be extended to the derived class including static methods of its base. 
+
+static methods are methods that are shared among the instances of the class. They give a global feel for the method. It is invoked by the classname instead of an object. static methods give a global feel for them and does not allow to access the instance fields of the class. However, U can access the static fields from an instance method in jS. 
+to call the static methods of the base class using this.constructor.funcName. However, all static members of the base class are available directly by the classname. 
+
 
 
 

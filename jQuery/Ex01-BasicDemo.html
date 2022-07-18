@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            width: 40%;
+            height: 200px;
+            display: inline-block;
+            background-color: indianred;
+            color:wheat;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>Part 1</div>
+    <div>Part 2</div>
+    <div>Part 3</div>
+    <div>Part 4</div>
+    <p>
+        <button>Click Me</button>
+        <button>Click Me</button>
+    </p>
+    <script>
+        const init = () =>{
+            $("div").click(function(){
+                // $("div").css("background-color", "green");
+                // $("div").css("color", "black");
+
+                $(this).css("background-color", "green");
+                $(this).css("color", "black");
+            })
+
+            $("button:first").click(function(){
+                $("div").text("Text content is changed")
+            })
+            $("button:eq(1)").click(function(){
+                $("div").text("Text changed back to original")
+            })
+        }
+        //$(document).ready(init);
+        $(function(){init()})//Short form of $(document).ready
+    </script>
+</body>
+</html>

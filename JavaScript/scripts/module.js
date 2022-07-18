@@ -1,0 +1,1 @@
+export const welcome = "Welcome to ES6 Modules";

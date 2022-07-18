@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                const name = $("#txtName").val();
+                //$("p:last").text("The name entered is " + name)
+                $("div:last>p").text("The name entered is " + name)
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>
+        Elements with id in jQuery can be refered prefixing the id with #, which is very similar to CSS Element By Id. 
+    </p>
+    <div>
+        <h2>Input Form</h2>
+        <p>Enter the Name: <input type="text" placeholder="Enter the Name" name="" id="txtName"></p>
+        <p>Enter the Date: <input type="Date" name="" id="txtDate"></p>
+        <p>Enter the Bill Amount<input type="number" name="" id="txtBill"></p>
+        <button>Save Changes</button>
+    </div>
+    <div>
+        <h2>Data Entered by the User:</h2>
+        <p></p>
+    </div>
+</body>
+</html>

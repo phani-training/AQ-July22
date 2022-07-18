@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+        div{
+            float: left;
+            background-color: cadetblue;
+            color:whitesmoke;
+            padding: 5px;
+            margin-left: 5px;
+            width: 65%;
+        }
+        nav{
+            height: 800px;
+            border: 2px solid burlywood;
+            align-content: center;
+            text-align: center;
+        }
+        li{
+            text-align: center;
+        }
+        a{
+            padding: 5px;
+            margin: 10px;
+            display: block;
+            width: 125px;
+            height: 50px;
+            background-color: darkseagreen;
+            color:blanchedalmond;
+            text-align: center;
+        }
+    </style>
+    <script>
+        const dateFormat = (date)=>{
+            const dt = date.getDate();
+            const month = date.getMonth() +1;
+            const yr = date.getFullYear();
+            return `${dt}-${month}-${yr}`
+        }
+        const data =[
+            {cstDate: new Date("12/12/2021"), name: "Phaniraj", amount: 76000},
+            {cstDate: new Date("05/02/2022"), name: "Sunder", amount: 46000},
+            {cstDate: new Date("04/21/2022"), name: "Robert", amount: 30000},
+            {cstDate: new Date("06/30/2022"), name: "John", amount: 34000},
+            {cstDate: new Date("06/15/2022"), name: "Samuel", amount: 15000}
+        ];
+
+        function loadData(){
+            $.each(data, (i, v)=>{ //array.foreach
+                const row = `<tr><td>${dateFormat(v.cstDate)}</td><td>${v.name}</td><td>${v.amount}</td><td><a href="#" class="edit" data-id="${i}">Edit</td></tr>`
+                $("table").append(row) //innerHTML +=
+            });
+            $(".edit").click(function(){
+                $("div").hide(2000)
+                $("div:first").next().show(2000);
+                const index = $(this).attr("data-id");
+                const selected = data[index];
+                $("#txtEditDate").val(selected.cstDate);
+                $("#txtEditName").val(selected.name);
+                $("#txtEditAmount").val(selected.amount);
+                return;
+            })
+        }
+        $(function(){
+            $("div").hide(2000);
+            $("a:first").click(function(){
+                $("div:eq(0)").show(2000);
+                loadData();
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1 style="height: 50px; padding: 30px; margin:5px; text-align: center; width: 100%; margin: 5px; background-color: darkorange;">Customer management software</h1>
+    <nav style="float: left;">
+        <ul style="list-style-type:none">
+            <li><a href="#">Show All Records</a> </li>
+            <li><a href="#">Add New Records</a> </li>
+            <li><a href="#">Delete Records</a> </li>
+            <li><a href="#">About Us</a> </li>
+        </ul>
+    </nav>
+    <div>
+        <h2>List of Records</h2>
+        <table border="1" class="data" style="width: 100%;">
+            <tr>
+                <th>Bill Date</th>
+                <th>Customer Name</th>
+                <th>Bill Amount</th>
+                <th>Options</th>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h2>Editing the Record</h2>
+        <p><input type="text" id="txtEditDate"></p>
+        <p><input type="text" id="txtEditName"></p>
+        <p><input type="number" id="txtEditAmount"></p>
+        <p><input type="button" id="btnUpdate" value="Update"></p>
+    </div>
+    <div>
+        <h2>Add New Customer Details</h2>
+        <p><input type="text" id="txtDate"></p>
+        <p><input type="text" id="txtName"></p>
+        <p><input type="text" id="txtAmount"></p>
+        <p><input type="button" id="btnAdd" value="Save"></p>
+    </div>
+    <div>
+        <h2>Delete the Details</h2>
+        <p>
+            <input placeholder="Enter the Id to Delete" id="txtDelete"/>
+            <button>Delete Rec</button>
+        </p>
+    </div>
+</body>
+</html>
