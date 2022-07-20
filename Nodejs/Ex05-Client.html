@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        const url = "http://localhost:3000/EmpRecords";
+        function getRecords(){
+            $.get(url, (data)=>{
+                debugger;
+                const records = data;
+                for (const obj of records) {
+                    $("p:first").append(obj.name + "<br/>");    
+                }
+            })
+        }
+        function insertRecord(){
+            const url ="http://localhost:3000/EmpRecords"
+            let rec ={};
+            rec.id = $("#txtId").val();
+            rec.name = $("#txtName").val();
+            rec.address = $("#txtAddress").val();
+            $.post(url, rec, (res)=>alert(res));
+        }
+
+        function updateRecord(){
+            const url ="http://localhost:3000/EmpRecords"
+            let rec ={};
+            rec.id = $("#txtEditId").val();
+            rec.name = $("#txtEditName").val();
+            rec.address = $("#txtEditAddress").val();
+            $.ajax({
+              'url' : url +"/" + rec.id,//Add id as Query string to update...
+              'data': rec,
+              'method': 'PUT',
+              'success': function(res){
+                alert(res)
+              }  
+            })
+        }
+        $(document).ready(function(){
+            getRecords();
+            $("button").click(insertRecord);
+            $("#btnUpdate").click(updateRecord);
+        })
+    </script>
+    <p>
+
+    </p>
+    <div>
+        <h2>Insert Record</h2>
+        <p><input type="text" id="txtId" placeholder="Enter the ID"></p>
+        <p><input type="text" id="txtName" placeholder="Enter the Name"></p>
+        <p><input type="text" id="txtAddress" placeholder="Enter the Address"></p> 
+        <button>Insert</button>
+    </div>
+    <div>
+        <h2>Update Record</h2>
+        <p><input type="text" id="txtEditId" placeholder="Enter the ID"></p>
+        <p><input type="text" id="txtEditName" placeholder="Enter the Name"></p>
+        <p><input type="text" id="txtEditAddress" placeholder="Enter the Address"></p> 
+        <button id="btnUpdate">Insert</button>
+    </div>
+</body>
+</html>

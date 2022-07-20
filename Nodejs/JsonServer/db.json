@@ -1,0 +1,24 @@
+{
+  "EmpRecords": [
+    {
+      "id": 123,
+      "name": "Testing PutCode",
+      "address": "Testing PutAddress"
+    },
+    {
+      "id": "333",
+      "name": "testingname",
+      "address": "testingAddress"
+    },
+    {
+      "id": "12333",
+      "name": "TRead Code",
+      "address": "TRead Address"
+    },
+    {
+      "id": 11,
+      "name": "PostMan Name",
+      "address": "Post man bangalore"
+    }
+  ]
+}

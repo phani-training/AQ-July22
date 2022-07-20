@@ -1,0 +1,6 @@
+What is Nodejs?
+Nodejs is a platform for creating JS apps out of the browser. With Nodejs, U can run UR JS code from the Terminals of UR OS. Nodejs is platform independent. It was developed by Ryan Dahl from Joyant technologies. He used the Chrome's V8 JS Engine to develop Nodejs Environment. U can download the Nodejs from the Nodejs website and install it. Along with Nodejs comes NPM(Node Package Manager) that contains 3rd parry node packages that can be consumed inside ur nodejs Apps. All Node Packages are shared or distrubuted using NPM. 
+
+REPL in Nodejs: Read-Evaluate-Print-Loop is a feature of Terminals where the Nodejs will Read the input given by the user in the terminal, evaluates it and prints the result in the terminal and waits again for the user's next input. U Press Ctrl+C to exit the loop.
+
+Nodejs comes with libraries that can be consumed to perform various tasks in ur application. All server related activities can be done using nodejs. This includes all IO related tasks. Nodejs gives the libraries in the form of modules that can be consumed in ur app

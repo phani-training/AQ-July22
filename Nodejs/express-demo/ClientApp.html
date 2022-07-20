@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script>
+        const url ="http://localhost:1234/EmpList"
+        const populateTable = ()=>{
+            $.get(url, (data)=>{
+                const array = JSON.parse(data);
+                $("table").find("tr:gt(0)").remove();
+                for(element of array){
+                    const row =`<tr><td>${element.empId}</td><td>${element.empName}</td><td>${element.empAddress}</td><td><a href="#" data-id="${element.empId}" class="btn btn-info edit">Edit</a></td></tr>`;
+                    $("table").append(row)    
+                }
+                $(".edit").click(function(){
+                    const id = $(this).attr("data-id")
+                    const temp = url +"/" + id;
+                    $.get(temp, (data)=>{
+                        $("#empId").val(data.empId);
+                        $("#empName").val(data.empName);
+                        $("#empAddress").val(data.empAddress);
+                    })
+                })
+            })
+        }
+        function updateRec(){
+            //create the object
+            const obj ={};
+            obj.empId = $("#empId").val();
+            obj.empName = $("#empName").val();
+            obj.empAddress = $("#empAddress").val();
+            //call the $.ajax
+            $.ajax({
+                method: 'PUT', 
+                data: obj,
+                url: url,
+                success: function(res){
+                    alert(res)
+                }
+
+            })
+            //display the message
+        }
+        function addRec(){
+            //get the inputs and create an object.
+            const obj ={};
+            obj.empId = $("#newId").val();
+            obj.empName = $("#newName").val();
+            obj.empAddress = $("#newAddress").val();
+            //call $.post
+            $.post(url, obj, (res)=> alert(res));
+            //display the message
+        }
+        $(function(){
+            $("a:first").click(populateTable)
+            $("button:eq(0)").click(updateRec);
+            $("button:last").click(addRec);
+        })
+    </script>
+</head>
+<body>
+    <div class="page-header m-3" style="text-align:center;">
+        <h2>Employee Monitoring System</h2>
+    </div>
+    <div class="p-4 m-3 container" style="text-align: center;">
+        <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+            <a href="#" class="nav-link bg-info p-4">View Employees</a>
+            <a href="#" class="nav-link bg-info p-4">Add Employees</a>
+            <a href="#" class="nav-link bg-info p-4">About Us</a>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-md-5 m-3">
+            <h2>Table of records</h2>
+            <table class="table table-warning table-bordered table-striped">
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Employee Address</th>
+                    <th>Options</th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-5 m-3 bg-danger text-light">
+            <h2>Edit data</h2>
+            <p class="form-group p-2"><label for="empId" class="form-control p-2">Employee ID:</label><input class="form-control input-lg" type="text" id="empId"></p>
+            <p class="form-group p-2"><label class="form-control p-2" for="empName">Employee Name: </label><input class="form-control input-lg" type="text" id="empName"></p>
+            <p class="form-group p-2"><label class="form-control p-2" for="empAddress">Employee Address:</label><input class="form-control input-lg" type="text" id="empAddress"></p> 
+            <p class="form-group p-2">
+                <button class="btn btn-warning">Update</button>    
+            </p>   
+        </div>
+        <div class="col-md-5 m-3 bg-info text-dark">
+            <h2>Edit data</h2>
+            <p class="form-group p-2"><label for="newId" class="form-control p-2">Employee ID:</label><input class="form-control input-lg" type="text" id="newId"></p>
+            <p class="form-group p-2"><label class="form-control p-2" for="newName">Employee Name: </label><input class="form-control input-lg" type="text" id="newName"></p>
+            <p class="form-group p-2"><label class="form-control p-2" for="newAddress">Employee Address:</label><input class="form-control input-lg" type="text" id="newAddress"></p> 
+            <p class="form-group p-2">
+                <button class="btn btn-warning">Add Employee</button>    
+            </p>   
+        </div>
+    </div>
+</body>
+</html>
