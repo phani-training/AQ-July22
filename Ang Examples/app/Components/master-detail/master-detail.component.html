@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row my-3">
+        <div class="col-md-6">
+            <div class="row">
+                <input type="search" [(ngModel)]="searchCriteria" placeholder="Search Here" class="form-control" />
+            </div>
+            <div class="col-md-10">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Employee Name</th>
+                            <th>Employee Address</th>
+                            <th>View Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let emp of employees | empFilter : searchCriteria">
+                            <td>{{emp.id}}</td>
+                            <td>{{emp.name}}</td>
+                            <td>{{emp.address}}</td>
+                            <td><button class="btn btn-primary" (click)="onDetail(emp)">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <app-view-employee [selectedEmp]="selectedEmp"></app-view-employee>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <app-add-employee (onNewEmployee)="addNewEmp($event)"></app-add-employee>
+        </div>
+    </div>
+
+</div>

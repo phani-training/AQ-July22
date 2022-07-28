@@ -1,0 +1,45 @@
+What is Angular?
+Angular is a framework based on JS and TS to create Component based Web Apps that is designed to run on multiple devices and platforms. Developed by Google, it is robust and reliable Framework and easy to work with.
+Latest version is 14 released in Apr-22. 
+
+Constituents of an Angular App:
+Angular apps contains one or more modules that are feature centric groups where each module contain one or more components, services, interfaces, classes, pipes and directives. 
+Components: UI Components with code, html, css and UT code. 
+Services: Functions and singleton objects that can be used across the components of a module.
+Interfaces: Contracts and Data Representations.
+Directives: Sp interpretations for the HTML code that U create, U can consider it as short cuts to a template code of html.
+Pipes: Transformers for the data to be presentable based on the UI logic. 
+All the above units are classes  by themselves with directives to define what they are. 
+
+How to create Angular Apps?
+1. Software requirements:
+a. Any OS
+b. Nodejs and NPM 
+c. Angular CLI ==>npm install -g @angular/cli
+d. VS Code for IDE. 
+
+How to create Angular app?
+Create a folder for UR App at UR prefered place in UR Machine. 
+Open the Cmd and move to the Folder location in the Cmd. 
+Run the CLI Command to create a new App => ng new sample-app
+
+Features of an Angular App:
+It supports Single Page Applications(SPAs). There is only one Page in Angular: index.html
+
+
+Assessment for HTML, CSS and jQuery
+Create a Single Page App for a food delivery App that will store  info about the partner restaurants. The data will be stored in json-server of Nodejs. The App will use jQuery to create a SPA and should have the following features:
+a. Register Restaurants to the App
+b. Add Menu to a selected Restaurant. 
+c. Allow users to modify the details. 
+d. The User of the Restaurant should be able to update his restaurant menu only. 
+Expected to Deliver: 5 PM.
+Create a Git repo under UR Name and share the link to my whatsApp no: 9945205684
+
+
+
+
+
+
+
+

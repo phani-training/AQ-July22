@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    padding: 3px;
+    margin: 3px;
+    font-family: 'Ubuntu', Tahoma, Geneva, Verdana, sans-serif;
+}
+.emp-img{
+    border-radius: 50%;
+    width: 150px;
+}
+
+.err-page{
+    padding: 50px;
+    margin: 10px;
+    font-size: 38pt;
+    width: 100%;
+    background-color: indianred;
+    color: whitesmoke;
+}

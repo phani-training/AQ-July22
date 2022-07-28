@@ -1,0 +1,18 @@
+
+<div class="containter">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>New Employee Creation</h2>
+            <hr>
+            <p><input type="number" placeholder="Enter the ID" [(ngModel)] ="id" class="form-control"></p>
+            <p><input type="text" placeholder="Enter the Name"  [(ngModel)] ="name"class="form-control"></p>
+            <p><input type="text" placeholder="Enter the Address"  [(ngModel)] ="address" class="form-control"></p>
+            <p><input type="text" placeholder="Enter the Email Address"  [(ngModel)] ="email" class="form-control"></p>
+            <p><input type="number" placeholder="Enter the Salary"  [(ngModel)] ="salary" class="form-control"></p>
+            <p><input type="file" placeholder="Select the Image path"  [(ngModel)] ="img" class="form-control" (change)="onChange($event)"></p>
+            <p>
+                <button class="btn btn-danger" (click)="onAddNew()">Add Employee</button>
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div *ngIf="selectedEmp" class="container">
+    <div class="row">
+        <div class="col">
+            <h2>{{selectedEmp.name}}</h2>
+            <hr>
+            <img class="emp-img" [src]="selectedEmp.empPic" />
+            <p><input type="text" [(ngModel)]="selectedEmp.id"></p>
+            <p><input type="text" [(ngModel)]="selectedEmp.emailAddress"></p>
+            <p><input type="text" [(ngModel)]="selectedEmp.salary"></p>
+            <p><input type="text" [(ngModel)]="selectedEmp.address"></p>
+            <p><input type="text" [(ngModel)]="selectedEmp.id"></p>
+        </div>
+    </div>
+</div>

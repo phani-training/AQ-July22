@@ -1,0 +1,27 @@
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-title list-group-item-danger p-3">
+                    <h2 class="h2">{{empRecord.name}}</h2>
+                </div>
+                 <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-sm-4">
+                            <img class="emp-img" [src]= "empRecord.empPic" alt="pic1">
+                        </div>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control my-4" [value]="empRecord.id">
+                            <input type="text"  class="form-control my-4"  [value]="empRecord.address">
+                            <input type="text"  class="form-control my-4"  [value]="empRecord.emailAddress">
+                            <input type="text"  class="form-control my-4" [value]="empRecord.salary">
+                        </div>
+                        <div class="col-sm-1">
+
+                        </div>
+                    </div>
+                 </div>   
+            </div>
+        </div>
+    </div>
+</div>

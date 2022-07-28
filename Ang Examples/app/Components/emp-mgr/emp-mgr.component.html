@@ -1,0 +1,50 @@
+<div  class="container">
+    <div class="row my-3">
+        <div class="col">
+            <input type="search" [(ngModel)] ="searchCriteria" placeholder="Search Here" class="form-control"/>
+        </div>
+    </div>
+  <div class="row">
+    <div class="col-md-6" *ngFor="let emp of employees | empFilter : searchCriteria">
+        <!-- <div class="card shadow my-3">
+            <div class="card-title my-3">
+                <h2 class="h2">{{emp.name}}</h2>
+                <hr>
+            </div>
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        <img class="emp-img" [src]="emp.empPic" alt=""/>
+                    </div>
+                    <div class="col-sm-6 ">
+                        <input type="text" class="form-control" [value]="emp.id" readonly/>
+                        <input type="text" class="form-control" [value]="emp.address" readonly/>
+                        <input type="text" class="form-control" [value]="emp.emailAddress" readonly/>
+                    </div>
+                    <div class="col-sm-1">
+                        <ul class="navbar" style="list-style-type: none;">
+                            <li class="navitem">
+                                <a class="btn btn-primary mt-2" routerLink="edit/123">
+                                    <i class="fa fa-pencil fa-fw"></i>
+                                </a>
+                            </li>
+                            <li class="navitem">
+                                <a class="btn btn-danger mt-2">  
+                                    <i class="fa fa-trash fa-fw"></i>
+                                </a>
+                            </li>
+                            <li class="navitem">
+                                <a class="btn btn-warning"  routerLink="view/123">
+                                    <i class="fa fa-eye fa-fw"> </i>                                    
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <app-view-employee [selectedEmp]="emp"></app-view-employee>
+    </div>
+  </div>
+
+</div>
