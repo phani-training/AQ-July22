@@ -1,0 +1,23 @@
+<h2>Details of the Employee</h2>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img [src]="foundEmp.empPic" alt="pic">     
+                 </div>
+                 <div class="col-sm-8">
+                     <input type="text" name="name" class="form-control" [(ngModel)]="foundEmp.name">
+                     <input type="text" name="emailAddress"  class="form-control" [(ngModel)]="foundEmp.emailAddress">
+                     <input type="text" name="salary"  class="form-control" [(ngModel)]="foundEmp.salary">
+                     <input type="text" name="address" class="form-control" [(ngModel)]="foundEmp.address">
+                 </div>
+            </div>
+            <div class="row">
+                <button type="button" class="btn btn-info" (click)="onUpdate()" >Update</button>
+                <button type="button" class="btn btn-secondary" routerLink="/">Back</button>
+            </div>
+        </div>
+    </div>
+</div>

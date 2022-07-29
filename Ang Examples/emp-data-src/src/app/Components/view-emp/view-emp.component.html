@@ -1,0 +1,22 @@
+<h2>Details of the Employee</h2>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img [src]="foundEmp.empPic" alt="pic">     
+                 </div>
+                 <div class="col-sm-8">
+                     <input type="text" class="form-control" [value]="foundEmp.name | uppercase" readonly>
+                     <input type="text"  class="form-control" [value]="foundEmp.emailAddress" readonly>
+                     <input type="text"  class="form-control" [value]="foundEmp.salary | currency: 'INR'" readonly>
+                     <input type="text"  class="form-control" [value]="foundEmp.address" readonly>
+                 </div>
+            </div>
+            <div class="row">
+                <button type="button" class="btn btn-info" routerLink="/">Back</button>
+            </div>
+        </div>
+    </div>
+</div>
